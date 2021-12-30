@@ -10,7 +10,6 @@ fetch("https://hp-api.herokuapp.com/api/characters")
 function addData(data) {
   data.forEach((element, index) => {
     if (index < 25) {
-      console.log(element);
       createCard(element);
     }
   });
