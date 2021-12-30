@@ -1,0 +1,174 @@
+/* GRYFFINDOR RED
+HEX #740001
+RGB 116, 0, 1
+
+GRYFFINDOR GOLD
+HEX #D3A625
+RGB 211, 166, 37 */
+
+:root {
+  --d: 700ms;
+  --e: cubic-bezier(0.19, 1, 0.22, 1);
+  --font-sans: "Rubik", sans-serif;
+  --font-serif: "Cardo", serif;
+}
+
+@font-face {
+  font-family: "harry_pregular";
+  src: url("../fonts/harryp__-webfont.woff2") format("woff2"),
+    url("../fonts/harryp__-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "harry_pregular";
+  background: #740001;
+  color: #d3a625;
+}
+
+/* Page Header */
+
+.page__main-info-wrapper {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.page__main-info-wrapper .page__main-title {
+  font-size: 5rem;
+}
+
+.page__main-info-wrapper .page__main-subtitle {
+  font-size: 3rem;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 10px 40px 50px;
+}
+
+/* Card */
+
+.card {
+  position: relative;
+  overflow: hidden;
+  width: 280px;
+  min-height: 340px;
+  margin: auto;
+  text-align: center;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1),
+    0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1),
+    0 16px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-position: 0 10% !important;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 200%;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    hsla(0, 0%, 0%, 0) 0%,
+    hsla(0, 0%, 0%, 0.009) 11.7%,
+    hsla(0, 0%, 0%, 0.034) 22.1%,
+    hsla(0, 0%, 0%, 0.072) 31.2%,
+    hsla(0, 0%, 0%, 0.123) 39.4%,
+    hsla(0, 0%, 0%, 0.182) 46.6%,
+    hsla(0, 0%, 0%, 0.249) 53.1%,
+    hsla(0, 0%, 0%, 0.320) 58.9%,
+    hsla(0, 0%, 0%, 0.394) 64.3%,
+    hsla(0, 0%, 0%, 0.468) 69.3%,
+    hsla(0, 0%, 0%, 0.540) 74.1%,
+    hsla(0, 0%, 0%, 0.607) 78.8%,
+    hsla(0, 0%, 0%, 0.668) 83.6%,
+    hsla(0, 0%, 0%, 0.721) 88.7%,
+    hsla(0, 0%, 0%, 0.762) 94.1%,
+    hsla(0, 0%, 0%, 0.790) 100%
+  );
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.card:hover::after {
+  transform: translateY(-50%);
+}
+
+.card-content {
+  color: #fff;
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 9;
+  transform: translateY(88%);
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-content {
+  transform: translateY(-28%);
+}
+
+.card-title {
+  color: #740001;
+  font-size: 36px;
+  margin-bottom: 7px;
+}
+
+.data__wrapper {
+  color: #D3A625;
+  font-size: 24px;
+}
+
+.filter-form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 93%;
+  margin: 30px auto;
+}
+
+.filter-form label {
+  font-size: 24px;
+}
+
+.filter-form label:last-of-type {
+  margin-left: 30px;
+}
+
+.filter-form input,
+.filter-form select {
+  padding: 4px 10px;
+  font-size: 22px;
+  color: #740001;
+  font-family: "harry_pregular";
+}
+
+.filter-form input:focus,
+.filter-form select:focus {
+  outline: none;
+}
+
+.filter-form select option {
+  background: #740001;
+  color: #d3a625;
+  font-size: 22px;
+}
