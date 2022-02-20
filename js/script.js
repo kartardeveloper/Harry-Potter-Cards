@@ -5,7 +5,8 @@ fetch("https://hp-api.herokuapp.com/api/characters")
   .then((response) => response.json())
   .then((data) => {
     addData(data);
-  });
+  })
+  .catch((err) => console.log(err));
 
 function addData(data) {
   data.forEach((element, index) => {
@@ -30,7 +31,6 @@ function createCard(mainElement) {
   document.querySelector(".container").appendChild(card);
   card.style.background = `url("${mainElement.image}") no-repeat top/cover`;
   cardFilters(mainElement, card);
-  
 }
 
 function cardFilters(mainElement, card) {
@@ -40,19 +40,19 @@ function cardFilters(mainElement, card) {
     let cardAncestry = mainElement.ancestry.toLowerCase();
     let cardSpecies = mainElement.species.toLowerCase();
 
-    if(selectFilterOption.value === 'name') {
-      filterFunction (cardName, card)
-    } else if(selectFilterOption.value === 'house') {
-      filterFunction (cardHouse, card)
-    } else if(selectFilterOption.value === 'ancestry') {
-      filterFunction (cardAncestry, card)
-    } else if(selectFilterOption.value === 'species') {
-      filterFunction (cardSpecies, card)
+    if (selectFilterOption.value === "name") {
+      filterFunction(cardName, card);
+    } else if (selectFilterOption.value === "house") {
+      filterFunction(cardHouse, card);
+    } else if (selectFilterOption.value === "ancestry") {
+      filterFunction(cardAncestry, card);
+    } else if (selectFilterOption.value === "species") {
+      filterFunction(cardSpecies, card);
     }
   });
 }
 
-function filterFunction (cardData, card) {
+function filterFunction(cardData, card) {
   if (!cardData.includes(filterInput.value.toLowerCase())) {
     card.style.display = "none";
   } else {
