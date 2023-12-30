@@ -1,7 +1,7 @@
 const filterInput = document.querySelector(".filter-input");
 const selectFilterOption = document.querySelector("#select-filter-option");
 
-fetch("https://hp-api.herokuapp.com/api/characters")
+fetch("https://hp-api.onrender.com/api/characters")
   .then((response) => response.json())
   .then((data) => {
     addData(data);
